@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="row mt-2">
+        <h1 class="text-center mb-4 bg-black text-white p-4">View All Employees</h1>
+
+        <table class="table border">
+            <tr class="border text-center bg-black text-white">
+                <th>Index</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+            <tr class="border text-center" *ngFor="let employee of employeeList; index as i">
+                <td>{{i+1}}</td>
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName+" "+employee.lastName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.departmentId}}</td>
+                <td>{{employee.roleId}}</td>
+                <td><button class="btn btn-danger" (click)="deleteEmployee(employee)"><i class="bi bi-trash-fill"></i></button></td>
+            </tr>
+        </table>
+    </div>
+</div>
